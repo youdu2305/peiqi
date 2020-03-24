@@ -1,0 +1,11 @@
+.el-dialog {
+    .el-dialog__body {
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 10px 20px;
+    }
+}
+
+.el-dialog__wrapper {
+    overflow: hidden;
+}

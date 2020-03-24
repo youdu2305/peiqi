@@ -1,0 +1,115 @@
+//覆盖elementUI原生样式
+@import "themes";
+
+.el-menu-item.is-active {
+    @include color-primary($background-color);
+    @include color-white($color)
+}
+
+.el-button {
+    @include color-primary($border-color);
+    @include color-primary($background-color);
+    @include color-white($color);
+    opacity: 1;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.el-button.is-disabled {
+    color: #C0C4CC;
+    background-color: #FFF;
+    border-color: #EBEEF5
+}
+
+.el-button--text {
+    @include color-black($color);
+    background: transparent !important;
+    border: 0 !important;
+    &:hover {
+        @include color-primary($color)
+    }
+}
+
+@mixin border-style {
+    @include color-primary($border-color);
+    opacity: 0.7;
+    &:hover {
+        opacity: 1;
+    }
+    &:focus {
+        opacity: 1;
+    }
+}
+
+.el-input, .el-select, .el-textarea {
+    .el-input__inner, .el-textarea__inner {
+        @include border-style
+    }
+}
+
+.el-cascader, .el-select {
+    .el-input.is-focus .el-input__inner, .el-input__inner:focus, .el-input__inner:hover {
+        @include color-primary($border-color);
+    }
+}
+
+.el-radio.is-bordered.is-checked {
+    @include color-primary($border-color);
+}
+
+.el-radio__input.is-checked {
+    .el-radio__inner {
+        @include color-primary($border-color);
+        @include color-primary($background-color);
+    }
+    + .el-radio__label {
+        @include color-primary($color);
+    }
+}
+
+.el-tabs__item {
+    &:hover {
+        @include color-primary($color)
+    }
+    &.is-active {
+        @include color-primary($color)
+    }
+}
+
+.el-date-editor.el-input, .el-date-editor.el-input__inner {
+    width: initial;
+}
+
+.el-pager {
+    @include color-text-regular;
+    li {
+        &.active {
+            @include color-primary($color)
+        }
+        &:hover {
+            @include color-primary($color)
+        }
+    }
+}
+
+.el-range-editor.is-active, .el-range-editor.is-active:hover {
+    @include color-primary($border-color)
+}
+
+.el-date-editor .el-range__icon {
+    @include color-primary($color)
+}
+
+.el-radio-button__orig-radio:checked + .el-radio-button__inner {
+    @include color-primary($border-color);
+    @include color-primary($background-color)
+}
+
+.el-dialog {
+    border-radius: $border-radius-dialog
+}
+
+.textarea-container {
+    @include color-primary($border-color);
+}

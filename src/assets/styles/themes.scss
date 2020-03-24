@@ -1,0 +1,164 @@
+/**
+ *@Description: 主题
+ *@author: Wangsenyang
+ *@Date: 2019/8/20
+*/
+//默认字体16px
+$font-primary: 20px;
+$font-regular: 16px;
+$font-secondary: 18px;
+$font-content:14px;
+
+// 背景色--主色调
+$bg-color: #F3F4F7;
+// 边框
+$border-radius-dialog: 10px;
+
+
+// 主题样式
+$default-theme: (
+    //Brand Color
+    color-primary:#409EFF,
+    // Functional Color
+    color-success:#67C23A,
+    color-warning:#E6A23C,
+    color-danger:#F56C6C,
+    color-info:#909399,
+    // Font Color
+    color-text-primary:#303133,
+    color-text-regular:#606266,
+    color-text-secondary:#909399,
+    // Border Color
+    border-color-base:#DCDFE6,
+    border-color-light:#E4E7ED,
+    border-color-lighter:#EBEEF5,
+    border-color-extra-light:#F2F6FC,
+    // Background Color
+    color-white:#FFFFFF,
+    color-black:#000000,
+    background-color-base:#F5F7FA
+);
+//添加其他主题样式...
+$red-theme: (
+    //Brand Color
+    color-primary:#FF4059,
+    // Font Color
+    color-text-primary:#303133,
+    color-text-regular:#606266,
+    color-text-secondary:#909399,
+    // Background Color
+    color-white:#FFFFFF,
+    color-black:#000000,
+);
+$green-theme: (
+    //Brand Color
+    color-primary:#67C23A,
+    // Font Color
+    color-text-primary:#303133,
+    color-text-regular:#606266,
+    color-text-secondary:#909399,
+    // Background Color
+    color-white:#FFFFFF,
+    color-black:#000000,
+);
+$pink-theme: (
+    //Brand Color
+    color-primary:#FFC0CB,
+    // Font Color
+    color-text-primary:#303133,
+    color-text-regular:#606266,
+    color-text-secondary:#909399,
+    // Background Color
+    color-white:#FFFFFF,
+    color-black:#000000,
+);
+
+// 定义映射集合
+$themes: (
+    default-theme: $default-theme,
+    red-theme: $red-theme,
+    green-theme: $green-theme,
+    pink-theme: $pink-theme,
+);
+
+$color: color;
+$border-color: border-color;
+$background-color: background-color;
+
+//遍历生成对应样式表
+//  主题色
+@mixin color-primary($param) {
+    @each $theme-name, $theme in $themes {
+        [data-theme = '#{$theme-name}'] & {
+            @if $param == color {
+                color: map-get($map: $theme, $key: color-primary)
+            } @else if $param == border-color {
+                border-color: map-get($map: $theme, $key: color-primary)
+            } @else if $param == background-color {
+                background-color: map-get($map: $theme, $key: color-primary)
+            }
+        }
+    }
+}
+
+// 字体颜色
+@mixin color-text-primary() {
+    @each $theme-name, $theme in $themes {
+        [data-theme = '#{$theme-name}'] & {
+            color: map-get($map: $theme, $key: color-text-primary)
+        }
+    }
+}
+
+@mixin color-text-regular() {
+    @each $theme-name, $theme in $themes {
+        [data-theme = '#{$theme-name}'] & {
+            color: map-get($map: $theme, $key: color-text-regular)
+        }
+    }
+}
+
+@mixin color-text-secondary() {
+    @each $theme-name, $theme in $themes {
+        [data-theme = '#{$theme-name}'] & {
+            color: map-get($map: $theme, $key: color-text-secondary)
+        }
+    }
+}
+
+//  背景色
+@mixin background-color-base() {
+    @each $theme-name, $theme in $themes {
+        [data-theme = '#{$theme-name}'] & {
+            background-color: map-get($map: $theme, $key: background-color-base)
+        }
+    }
+}
+
+@mixin color-white($param) {
+    @each $theme-name, $theme in $themes {
+        [data-theme = '#{$theme-name}'] & {
+            @if $param == color {
+                color: map-get($map: $theme, $key: color-white)
+            } @else if $param == border-color {
+                border-color: map-get($map: $theme, $key: color-white)
+            } @else if $param == background-color {
+                background-color: map-get($map: $theme, $key: color-white)
+            }
+        }
+    }
+}
+
+@mixin color-black($param) {
+    @each $theme-name, $theme in $themes {
+        [data-theme = '#{$theme-name}'] & {
+            @if $param == color {
+                color: map-get($map: $theme, $key: color-black)
+            } @else if $param == border-color {
+                border-color: map-get($map: $theme, $key: color-black)
+            } @else if $param == background-color {
+                background-color: map-get($map: $theme, $key: color-black)
+            }
+        }
+    }
+}

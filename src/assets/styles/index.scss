@@ -1,0 +1,113 @@
+/**
+ * Created by wangsenyang on 19/08/14.
+ * Description: public style (scss)
+ */
+@import "element-ui";
+@import "flex";
+@import "themes";
+@import "animate.css";
+@import "dialog-override.scss";
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: $font-regular;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    background-color: $bg-color;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.middle-by-position {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*修改默认滚动条*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(50, 50, 50, .1);
+    -webkit-border-radius: 3px;
+    height: 5px !important;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    @include color-primary($background-color);
+    -webkit-border-radius: 3px;
+    height: 5px !important;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    @include color-primary($background-color);
+    -webkit-border-radius: 3px;
+    height: 5px !important;
+}
+
+.el-col {
+    .ipt {
+        width: 100%;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+i {
+    @include color-primary($color);
+    opacity: 0.7;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// 页面侧边内容模块
+.slider-main-content {
+    width: 100%;
+    height: 100%;
+    .search-bar {
+        height: 40px;
+        & > div {
+            height: 100%;
+        }
+    }
+}
+
+.dialog-width-fit-content {
+    .el-dialog {
+        width: fit-content;
+    }
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.text-center {
+    text-align: center;
+}
