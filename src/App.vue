@@ -43,13 +43,6 @@ export default {
             currentThemeInfo: 'getThemeInfo',
         }),
     },
-    components: {
-        // daily,
-        // mpost,
-    },
-    created: () => {
-
-    },
 };
 </script>
 <style lang="scss">
